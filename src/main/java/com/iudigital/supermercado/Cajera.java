@@ -43,12 +43,16 @@ public class Cajera implements Runnable {
         for (int i = 0; i < this.cliente.getIdProducto().length; i++) {
             // Se procesa el pedido en X segundos 
             this.esperarXsegundos(cliente.getIdProducto()[i]);
-            System.out.println("Se ha procesado el producto " + cliente.getIdProducto()[i] + " del " + this.cliente.getNombre()
-                    + "->Tiempo: " + (System.currentTimeMillis() - this.initialTime) / 1000 + " segundos");
+            System.out.println("Se ha procesado el producto "
+                    + cliente.getIdProducto()[i]
+                    +" del " + this.cliente.getNombre()
+                    +"->Tiempo: " + (System.currentTimeMillis() - this.initialTime) / 1000
+                    +" segundos");
         }
 
-        System.out.println("LA CAJERA No " + Thread.currentThread().getId() + " HA TERMINADO DE PROCESAR "
-                + this.cliente.getNombre() + " EN: "
+        System.out.println("LA CAJERA No " + Thread.currentThread().getId() +
+                " HA TERMINADO DE PROCESAR "
+                +this.cliente.getNombre() + " EN: "
                 + (System.currentTimeMillis() - this.initialTime) / 1000 + " SEGUNDOS");
 
     }
